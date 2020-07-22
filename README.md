@@ -1,7 +1,7 @@
 # Algorithms-in-SQL
 Implementation of popular algorithms in SQL from scratch
 
-Implemented in PostGreSQL. <br>
+Implemented in PostgreSQL. <br>
 The following algorithms have been implemented from scratch:
 * Supersets of set
 * Finding vertices in a graph that are connected by an even and odd length path
