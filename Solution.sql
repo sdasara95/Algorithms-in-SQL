@@ -1,5 +1,3 @@
-
-
 Create database satya_assignment8;
 
 \c satya_assignment8;
@@ -36,6 +34,7 @@ $$ language sql;
 --select setdifference(ARRAY[1,2,3,4,5],ARRAY[4,5,6,7,8])
 
 \echo '----------------Question 1----------------'
+\echo 'Super-sets of a set'
 create table A(x int);
 delete from A;
 insert into A values(1),(2),(3),(4);
@@ -85,6 +84,7 @@ select superSetsOfSet('{1,2,3}');
 select superSetsOfSet('{1,2,3,4}');
 
 \echo '----------------Question 2----------------'
+\echo 'Finding vertices in a graph that are connected by an even and odd length path'					
 --drop table if exists graph cascade;
 --drop table if exists graph_weights cascade;
 
@@ -197,6 +197,7 @@ select * from connectedByOddLengthPath();
 
 
 \echo '----------------Question 3----------------'
+\echo 'Topological sort'														 
 drop table if exists graph cascade;
 
 create table graph(source int, target int);
@@ -285,6 +286,7 @@ select * from graph;
 select * from topologicalSort();
 
 \echo '----------------Question 4----------------'
+\echo '3-colorable graph or not'																    
 drop table if exists graph cascade;
 
 create table graph(source int, target int);
@@ -377,6 +379,8 @@ select threeColorable();
 
 
 \echo '----------------Question 5----------------'
+\echo 'Hamiltonian cycle'
+
 drop table if exists graph cascade;
 
 create table graph(source int, target int);
@@ -478,6 +482,8 @@ insert into graph values(1,2),(1,4),(1,7),(2,1),(2,3),(2,4),(3,2),(3,4),(3,5),(4
 select Hamiltonian();
 
 \echo '----------------Question 6----------------'
+\echo 't-frequent set using Apriori rule'
+												    
 --drop table if exists documents cascade;
 
 CREATE TABLE documents(doc int primary key, words text[]);
@@ -516,6 +522,8 @@ select frequentSets(5);
 
 
 \echo '----------------Question 7----------------'
+\echo 'Kmeans'
+	      
 --drop table if exists dataset;
 --drop table if exists clusters;
 --drop table if exists final_clusters;
@@ -565,6 +573,8 @@ $$ language plpgsql;
 select kmeans(2 , 50);
 
 \echo '----------------Question 8----------------'
+\echo 'Finding aggregated weights of all the parts'
+									  
 --drop table if exists partSubpart cascade;
 --drop table if exists basicPart cascade;
 
@@ -609,6 +619,8 @@ from (select pid from partsubpart union select pid from basicpart) q
 order by 1;																	 
 
 \echo '----------------Question 9----------------'
+\echo 'Dijkstra's algorithm'
+					      
 drop table if exists graph cascade;								  
 create table graph(source int, target int, weight int);
 
@@ -682,6 +694,7 @@ select * from Dijkstra(3);
 select * from Dijkstra(4);
 
 \echo '----------------Question 10----------------'
+\echo 'Map-reduce'					      
 \echo '---------10-a---------'
 --drop table if exists R cascade;
 
